@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .screen{
+            width: 750px;
+            height: 250px;
+            overflow: auto;
+            background-color: silver;
+            border: 1px solid darkslategrey;
+            margin: auto;
+        }
+        .screen p{
+            width: 120px;
+            height: 50px;
+            float: left;
+            margin: 10px;
+            border: 1px solid transparent;
+            padding: 2px;
+            background-color: dimgray;
+            text-align: center;
+            line-height: 50px;
+            color: floralwhite;
+            font-weight: bold;
+        }
+
+        button{
+            background-color: rgb(42, 165, 58);
+            font-size: 15px;
+            padding: 10px;
+        }
+    </style>
+     <script>
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click",startEvent1);
+            document.getElementsByTagName("button")[1].addEventListener("click",stopEvent1)
+        }
+        function startEvent1(){
+            document.getElementsByClassName("screen")[0].innerHTML += "<p>You Clicked it</p>";
+    
+        }
+        function stopEvent1(){
+            document.getElementsByTagName("button")[0].removeEventListener("click",startEvent1);
+            document.getElementsByTagName("button")[1].removeEventListener("click",stopEvent1);
+    
+        }
+    document.addEventListener("DOMContentLoaded",init);
+    </script>
+
+     <!-- <script>
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click", startEvent);
+            //---------------------------------------------
+            document.getElementsByTagName("button")[1].addEventListener("click", removeEvent);
+        };
+        function startEvent(){
+            document.getElementsByClassName("screen")[0].innerHTML +="<p> Clicked </p>";
+        };
+        function removeEvent(){
+            document.getElementsByTagName("button")[0].removeEventListener("click", startEvent);
+            //---------------------------------------------
+            document.getElementsByTagName("button")[1].removeEventListener("click", removeEvent);
+        };
+        document.addEventListener("DOMContentLoaded", init);
+    </script> -->
+
+</head>
+<body>
+    <button>Click to start</button>
+    <button>Click to Stop</button>
+    <hr>
+    <div class="screen"></div>
+    
+</body>
+
+</html>

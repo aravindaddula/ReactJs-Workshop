@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+
+//  class Mike{
+//     firstName = "Mike Ross";
+// }
+
+// class Harvey extends Mike{
+//     fullName="Harvey Reginald ";
+//     _mission="practicing Law"
+
+//     constructor(argFn){
+//         super();
+//         this.fullName = this.fullName;
+//     }
+
+//     get one(){
+//         return this._mission;
+//     }
+//     set one(chMission){
+//         this._mission = chMission;         
+//     }
+
+//     name(){
+//         return this.fullName + "Mike";
+//     } 
+
+// }
+
+import { Harvey } from "./modules/harvey.js";
+
+let donna = new Harvey("Harvey Reginald Specter");
+console.log(donna);
+console.log(donna.one);
+console.log(donna.name());
+donna.one = "This is for a change rehired Mike ross";
+console.log(donna.one);
+console.log(donna.firstName);
+
+    </script>
+</body>
+</html>

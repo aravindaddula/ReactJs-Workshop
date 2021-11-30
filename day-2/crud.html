@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <style>
+        button{
+            font-size: 20px;
+           margin:10px;
+        }
+.root{
+  width: 750px;
+  height: 350px;
+background-color: blue;
+  overflow: auto; 
+
+}
+.root div{
+    width: 100px;
+    height: 100px;
+background-color: white;
+margin:10px;
+float: left;
+}
+    </style>
+    <script>
+document.addEventListener('DOMContentLoaded',init);
+var root=document.getElementsByClassName("root");
+var btn=document.getElementsByClassName("btn");
+var rmBtn=document.getElementsByClassName('rmBtn');
+var lastBtn=document.getElementsByClassName("lastBtn");
+var count=1;
+
+function init(){
+    btn[0].addEventListener("click",createDiv);
+    rmBtn[0].addEventListener('click',removeBtn);
+    lastBtn[0].addEventListener("click",lastButton);
+    root[0].addEventListener("click",removeSelectedItem);
+}
+function createDiv(){
+    // let elemDiv=document.createElement("div");
+    // elemDiv.innerHTML=count;
+    // root[0].appendChild(elemDiv);
+    root[0].innerHTML +="<div onclick='removeThis(this)'>"+count+"</div>";
+    count++;
+}
+function removeBtn(){
+    
+    let element=root[0].firstChild;
+    if(element){
+    root[0].removeChild(element);
+    }
+    else{
+        alert("No elements")
+    }
+}
+function lastButton(){
+    
+    let element=root[0].lastChild;
+    if(element){
+   root[0].removeChild(element);
+    }
+    else{
+        alert("no Last elements");
+    }
+}
+function removeSelectedItem(evt){
+    if(evt.target.class==='root'){
+        alert("you clicked root")
+    }
+    else{
+        root[0].removeChild(evt.target);
+    }
+}
+    </script>
+</head>
+<body>
+    <button class="btn">Add Button</button>
+    <button class="rmBtn">Remove Button</button>
+    <button class="lastBtn"> Remove Last Button</button>
+    <hr>
+    <div class="root">
+       
+    </div>
+</body>
+</html>

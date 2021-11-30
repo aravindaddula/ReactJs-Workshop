@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root{
+            width: 650px;
+            height: 400px;
+            background-color: darkslategrey;
+            border: 1px solid transparent;
+            margin: auto;
+            overflow: auto;
+        }
+        #root div{
+            width: 100px;
+            height: 100px;
+            background-color: peachpuff;
+            border: 1px solid transparent;
+            margin: 10px;
+            float: left;
+            color: darkslateblue;
+            text-align: center;
+            line-height: 100px;
+            font-size: 50px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", init);
+        var count = 1;
+        var root;
+        function init(){
+            document
+            .getElementsByTagName("button")[0]
+            .addEventListener("click", addBoxHandler);
+            //---------------------------------------------
+            document
+            .getElementsByTagName("button")[1]
+            .addEventListener("click", removeBoxHandler);
+            //---------------------------------------------
+            document
+            .getElementsByTagName("button")[2]
+            .addEventListener("click", removeLastBoxHandler);
+            //---------------------------------------------
+            root = document.getElementById("root");
+            root.addEventListener("click", removeSelectedBoxHandler);
+        };
+        function addBoxHandler(){
+           /*  var element = document.createElement("div");
+                element.innerText = count;
+            document.getElementById("root").appendChild( element );
+                count++; */
+            // root.innerHTML += "<div onclick='removeThisBox(this)'>"+count+"</div>";
+            root.innerHTML += "<div>"+count+"</div>";
+            count++;
+        }
+        function removeBoxHandler(){
+            var element = root.firstChild;
+            if(element){
+                root.removeChild( element );
+            }else{
+                alert("nothing to remove");
+            }
+        }
+        function removeLastBoxHandler(){
+            var element = root.lastChild;
+            if(element){
+                root.removeChild( element );
+            }else{
+                alert("nothing to remove");
+            }
+        }
+/*         function removeThisBox(element){
+            root.removeChild( element );
+        } */
+        function removeSelectedBoxHandler(evt){
+           // alert("you clicked the "+evt.target.innerHTML);
+           if(evt.target.id === 'root'){
+            alert("you clicked the root element")
+           }else{
+            root.removeChild( evt.target );
+           };
+        }
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Remove First Box</button>
+    <button>Remove Last Box</button>
+    <hr>
+    <div id="root"></div>
+</body>
+</html>

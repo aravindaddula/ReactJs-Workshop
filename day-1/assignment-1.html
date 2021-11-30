@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="fun1()">
+    <div class="screen"></div>
+    <p id="one"></p>
+    <p id="two"></p>
+    <p id="three"></p>
+    <script>
+    
+        function fun1(){
+    console.log("body OnLoad Triggered");
+        }
+       function fun2(){
+document.getElementById("two").innerHTML="hi"=new Date();
+    } 
+       function fun3(){
+        console.log("DOMContentLoaded Triggered");
+       }
+       window.addEventListener("load",fun2)
+       document.addEventListener('DOMContentLoaded',fun3);
+       
+
+    </script>
+</body>
+</html>
