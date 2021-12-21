@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function fun1() {
+        document.getElementsByTagName("h1")[0].textContent = "Welcome to your Body on Load";
+      }
+ 
+      function fun2() {
+        alert("Welcome to your Windows On Load Content");
+      }
+ 
+      function fun3() {
+        console.log("Welcome to DOMContentLoaded Function");
+      }
+      window.onload = fun2();
+      document.addEventListener("DOMContentLoaded", fun3);
+    </script>
+  </head>
+  <body onload="fun1()">
+    <!--
+    Assignment
+    create 3 different functions name them
+    fun1, fun2, fun3
+    call the fun1 on body.onload
+    call the fun2 on window.addEventlistner (load)
+    call the fun3 on document.addEventListener DOMContentLoaded
+-->
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function declaration
+/*         function adder(num1, num2){
+            return num1 + num2;
+        }; */
+        
+        // function expression
+/*         let adder = function(num1, num2){
+            return num1 + num2;
+        }; */
+
+        /*
+        let adder = function(num1, num2){
+            return num1 + num2;
+        };
+        let adder = (num1, num2)=>{
+            return num1 + num2;
+        };
+        let adder = (num1, num2)=> num1 + num2 ;
+
+        let adder = (num1)=> num1 + num1 ;
+        */
+
+      /*  
+        var adder = num1 => num1 + num1 ;
+
+        console.log(adder(4));// 8
+
+     */
+
+     /* var price = 100;
+
+     var tellprice = function(){
+        return this.price * 5;//
+     };
+
+     console.log( addprice() ); */
+
+     var obj = {
+         price : 100,
+         tellprice : function(){
+             var price5times = () => {
+                 console.log(this.price);// undefined
+                 return this.price * 5
+             }
+             // console.log(this);// obj
+             return price5times();
+         }
+     };
+
+     console.log( obj.tellprice() );// ??? 500
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       /*  
+         console.log("1st log");
+        console.log("2nd log");
+       let promise = new Promise(function(resolve, reject){
+        setTimeout(function(){
+            if(true){
+                resolve((
+                    console.log("3rd log"),
+                    "success data from resolve"
+                ));
+            }else{
+                reject("error data from reject");
+            }
+        },6000)
+       });
+        console.log("4th log");
+        console.log("5th log"); 
+        */
+
+        let promise = new Promise(function(resolve, reject){
+        setTimeout(function(){
+            if(false){
+                resolve("Success Data From Resolve");
+            }else{
+                reject("error data from reject");
+            }
+        },4000)
+       });
+
+      /*  promise
+       .then(function(data){
+           console.log(data);
+       })
+       .catch(function(error){
+            console.log(error)
+       })
+       .finally(function(){
+            console.log("done with promise")
+       })
+        */
+        promise
+       .then( data => {
+           console.log(data)
+           return data.toUpperCase();
+        } )
+       .then( data => {
+           console.log(data)
+           return data.toLowerCase();
+        } )
+       .then( data => {
+           console.log(data)
+        } )
+       .catch(err => console.log("Error Data : ", err));
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

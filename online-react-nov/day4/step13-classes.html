@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // ES6
+      /*   class Hero{
+            constructor(argTitle, argFirstName, argLastName, argCity){
+                this.title = argTitle;
+                this.firstname = argFirstName;
+                this.lastname = argLastName;
+                this.city = argCity;
+            }
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+        } */
+
+
+        
+        // ES7 
+        class Person{
+            message = 'default value';
+            constructor(nmessage){
+                this.message = nmessage;
+            }
+        };
+        class Hero extends Person{
+            title = 'default title';
+            firstname = 'default firstname';
+            lastname = 'default lastname';
+            city = 'default city';
+            _mission = "my secret mission";
+            static version = 1001;
+            constructor(argTitle, argFirstName, argLastName, argCity, argMsg){
+                super(argMsg);
+                this.title = argTitle;
+                this.firstname = argFirstName;
+                this.lastname = argLastName;
+                this.city = argCity;
+            }
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+            get mission(){
+                return this._mission;
+            }
+            set mission(nmission){
+                this._mission = nmission;
+            }
+        };
+        let hero = new Hero("Ironman","Tony","Stark","New York","I am Ironman");
+        console.log(hero.firstname, hero.title);
+        console.log(hero.fullname());
+        console.log(hero.mission);
+        hero.mission = "Modified Mission";
+        console.log(hero.mission);
+        console.log(hero.message);
+        console.log(Hero.version);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

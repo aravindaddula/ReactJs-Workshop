@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <style>
+        #div1, #div2, #div3{
+            width: 600px;
+            height: 50px;
+            background-color: slategray;
+            color: white;
+            border: 1px solid slateblue;
+            margin: auto;
+            margin-bottom: 10px;
+            text-align: center;
+            padding-top: 10px;
+        }
+    </style>
+    <script>  
+        function fun1(){
+           console.log("Body onload was called")
+        }     
+        function fun2(){
+            console.log("Window addEventListener load was called")
+        }
+        function fun3(){
+            console.log("Document addEventListener DOMContentLoaded was called")
+        }
+        window.addEventListener('load', fun2);
+        document.addEventListener("DOMContentLoaded", fun3);
+    </script>
+</head>
+<body onload="fun1()">
+</body>
+</html>

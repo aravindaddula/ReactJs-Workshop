@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let asyncCallOne = async function(){
+            let promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(false){
+                        resolve("Success From AsynCallOne");
+                    }else{
+                        reject("Error From AsynCallOne");
+                    }
+                },2000)
+            });
+            return await promise;
+        };
+        let asyncCallTwo = async function(){
+            let promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("Success From AsynCallTwo");
+                    }else{
+                        reject("Error From AsynCallTwo");
+                    }
+                },4000)
+            });
+            return await promise;
+        };
+/* 
+        Promise.all([asyncCallOne(), asyncCallTwo()])
+        .then(function(responseArr){
+            console.log(responseArr);
+        }).catch(function(error){
+            console.log("Error", error);
+        }) 
+*/
+/*         Promise.any([asyncCallOne(), asyncCallTwo()])
+        .then(function(responseArr){
+            console.log(responseArr);
+        }).catch(function(error){
+            console.log("Error", error);
+        }) */
+
+        Promise.race([asyncCallOne(), asyncCallTwo()])
+        .then(function(responseArr){
+            console.log(responseArr);
+        }).catch(function(error){
+            console.log("Error", error);
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root{
+            width: 650px;
+            height: 400px;
+            background-color: darkslategrey;
+            border: 1px solid transparent;
+            margin: auto;
+            overflow: auto;
+        }
+        #root div{
+            width: 100px;
+            height: 100px;
+            background-color: peachpuff;
+            border: 1px solid transparent;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", init);
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click", addBoxHandler);
+            document.getElementsByTagName("button")[1].addEventListener("click", removeBoxHandler);
+        }
+
+        function addBoxHandler(){
+            var element = document.createElement("div");
+            document.getElementById("root").appendChild(element);
+        }
+
+        function removeBoxHandler(){
+            var element = document.getElementById("root").firstChild;
+            document.getElementById("root").removeChild(element);
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Remove Box</button>
+    <hr>
+    <div id="root"></div>
+</body>
+</html>

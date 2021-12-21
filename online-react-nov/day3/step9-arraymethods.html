@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = [56,85,100,34,14,99,23,7,71,78,16,26,88];
+
+        /* function sortfun(num1, num2){
+            if(num1 > num2){
+                return 1
+            }else if( num1 < num2){
+                return -1
+            }else{
+                return 0
+            }
+        };
+
+        console.log(arr.sort(sortfun)); */
+
+        // console.log( 5 === "5" );// true
+
+       /*  
+        for(let i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+        }; 
+        */
+
+        // arr.forEach( val => console.log(val) );
+        
+/*         var doubleArr = arr.map(val=>val*2);
+        console.log(arr);
+        console.log("++++++++++++++++++++++");
+        console.log(doubleArr); */
+
+/*         var lessThan50 = arr.filter(val=>val<50);
+        console.log(lessThan50); */
+
+        var allGreaterThan50 = arr.every(val=>val > 50);
+        var allGreaterThan5 = arr.every(val=>val > 5);
+
+        console.log(allGreaterThan50);// false
+        console.log(allGreaterThan5);// true
+
+        var fewGreaterThan50 = arr.some(val=>val > 50);
+        var fewGreaterThan5 = arr.some(val=>val > 5);
+
+        console.log(fewGreaterThan50);// false
+        console.log(fewGreaterThan5);// true
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

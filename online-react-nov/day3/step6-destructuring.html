@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let hero = {
+            title : "Ironman",
+            firstname : "Tony",
+            lastname : "Stark",
+            power : 7,
+            city : "New York"
+        };
+
+        /* 
+        let avenger = hero;
+        console.log(avenger.title);// Ironman
+        console.log(hero.title);// Ironman
+        
+        avenger.title = "Ironmonger";
+        console.log(avenger.title);// Ironmonger
+        console.log(hero.title);// ???  
+        */
+
+        // ES3 
+/*      var avengerTitle = hero.title;
+        var avengerFirstname = hero.firstname;
+        var avengerLastname = hero.lastname;
+        var avengerPower = hero.power;
+        var avengerCity = hero.city; 
+*/
+/* 
+        let avengerTitle = hero.title,
+            avengerFirstname = hero.firstname,
+            avengerLastname = hero.lastname,
+            avengerPower = hero.power,
+            avengerCity = hero.city;
+ */
+
+ // ES5
+
+        /* let { 
+            title : heroTitle, 
+            firstname : heroFirstname, 
+            lastname : heroLastname, 
+            power : heroPower, 
+            city : heroCity 
+        } = hero;
+
+        console.log(heroTitle);// Ironman
+        console.log(hero.title);// Ironman
+        
+        heroTitle = "Ironmonger";
+        console.log(heroTitle);// Ironmonger
+        console.log(hero.title);// Ironman   */
+
+        let { title, firstname, lastname, power, city } = hero;
+
+        console.log(title);// Ironman
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

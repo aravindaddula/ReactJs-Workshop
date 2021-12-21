@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment day1</title>
+    <script>
+      function fun1() {
+          console.log("body onload Was Called ");
+          document.getElementsByTagName("h1")[0].textContent = new Date().getTime();
+      };
+      function fun2() {
+          console.log("window.addEventListener load Was Called ");
+          document.getElementsByTagName("h1")[1].textContent = new Date().getTime();
+      };
+      function fun3() {
+          console.log("document.addEventListener DOMContentLoaded Was Called ");
+          document.getElementsByTagName("h1")[2].textContent = new Date().getTime();
+      };
+      window.addEventListener("load", fun2);
+      document.addEventListener("DOMContentLoaded", fun3);
+    </script>
+  </head>
+  <!-- <body onload="fun1()"> -->
+  <body onload="fun1()">
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+  </body>
+</html>
+
+<!--
+    Assignment
+    create 3 different functions name them
+    fun1, fun2, fun3
+    call the fun1 on body.onload
+    call the fun2 on window.onload
+    call the fun3 on document.addEventListener DOMContentLoaded
+-->
